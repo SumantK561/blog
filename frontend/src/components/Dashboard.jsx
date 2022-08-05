@@ -23,7 +23,7 @@ export default function Dashboard() {
 
     }
     const getUser = (e) => {
-        if(token.userId == id){
+        if(token.userId === id){
         axios.get(`http://127.0.0.1:8000/api/userView/${id}` , { headers: {"Authorization" : `Bearer ${token.token}`}})
             .then((e) => {
                 console.log(e.data);

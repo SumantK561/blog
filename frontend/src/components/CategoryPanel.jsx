@@ -44,7 +44,7 @@ const CategoryPanel = () => {
   };
   const deleteCategory = (id, userid) => {
     setUpdate(false);
-    if (user.userId == userid) {
+    if (user.userId === userid) {
       axios
         .delete(`http://127.0.0.1:8000/api/categoryDelete/${id}`)
         .then((e) => {

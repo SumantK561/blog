@@ -15,7 +15,7 @@ const Category = () => {
     const user = JSON.parse(localStorage.getItem('token'));
     const submitUpdateForm = (e) => {
         e.preventDefault();
-        const data = new FormData;
+        const data = new FormData();
         data.append('title', title);
         data.append('image', img);
         data.append('desc', desc);
@@ -52,7 +52,7 @@ const Category = () => {
     }
     
     const EditCategory = (id, user_id) => {
-        if (user.userId == user_id) {
+        if (user.userId === user_id) {
             setEditStatus(true);
             setUpdateId(id);
         }
@@ -60,7 +60,7 @@ const Category = () => {
     }
 
     const deleteCategory = (id,user_id) => {
-        if (user.userId == user_id) {
+        if (user.userId === user_id) {
             axios.delete(`http://127.0.0.1:8000/api/postDelete/${id}`)
                 .then((e) => {
                     console.log(e.data);
@@ -76,7 +76,7 @@ const Category = () => {
     }
 
 let data = item.filter((e) => {
-    return e.category_id == id;
+    return e.category_id === id;
 })
 useEffect(() => {
     getData();
