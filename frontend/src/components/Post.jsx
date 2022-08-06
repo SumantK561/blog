@@ -26,7 +26,7 @@ const Post = () => {
       });
   };
   const editpost = (id, commentOwner) => {
-    if (commentOwner == user.userId) {
+    if (commentOwner === user.userId) {
       setEditState(true);
       setUpdateId(id);
     } else {
@@ -36,7 +36,7 @@ const Post = () => {
 
   const deleteComment = (id, commentOwner, e) => {
     console.log("comment id", id);
-    if (user.userId == commentOwner || user.userId == item.post.user_id) {
+    if (user.userId === commentOwner || user.userId === item.post.user_id) {
       axios
         .delete(`http://127.0.0.1:8000/api/commentDelete/${id}`)
         .then((e) => {
@@ -45,7 +45,7 @@ const Post = () => {
         })
         .catch(() => {
           alert("Internal Error ... Please Check Post - DeleteComment ...", e);
-          // console.log("error");
+          
         });
     } else {
       alert("Not Allowed To Delete ...");
@@ -165,7 +165,7 @@ const Post = () => {
                     return (
                       <>
                         <li className="">
-                          {ele.comment}
+                          {ele.img_text}
                           <button
                             onClick={() => editpost(ele.id, ele.user_id)}
                             className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center ml-2 mb-2"

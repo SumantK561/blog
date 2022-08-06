@@ -59,7 +59,7 @@ export default function Allposts() {
         />
       </div>
 <br/>
-      <div className=" flex mx-6    border  border-solid    rounded-lg bg-amber-100">
+      <div className=" flex mx-6 border border-solid rounded-lg bg-amber-100">
         <div className="flex flex-col p-3 w-44 ">
           <h4 className="text-3xl underline">Categories</h4>
           <button className="text-2xl   text-blue-900 font-serif" onClick={showPost}>
@@ -87,17 +87,18 @@ export default function Allposts() {
             post.map((e) => {
               return (
                 <>
-                  <div className=" bg-slate-300 max-w-xs h-64 rounded-md overflow-hidden shadow-lg">
+                  <div className=" bg-slate-300 max-w-xs rounded-md overflow-hidden shadow-lg">
                     <img
-                      className="w-3/4 m-auto mt-3"
+                      className="w-3/4 h-24 m-auto mt-3"
                       src={orig + e.image}
                       alt="Sorry...Image Not Found..."
                     />
                     <div className="px-6 py-4">
                       <p className="text-xl my-1">{e.title}</p>
+                      <br/>
                       <Link
                         to={"/post/" + e.post_id}
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full "
+                        class="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full "
                       >
                         View
                       </Link>

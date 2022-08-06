@@ -9,7 +9,7 @@ const Logout = () => {
     const navigate = useNavigate();
     
     const logoutUser = (e)=>{
-      axios.get(`http://127.0.0.1:8000/api/logoutUser`, { headers: {"Authorization" : `Bearer ${token.token}`} })
+      axios.get(`http://127.0.0.1:8000/api/logoutUser`, { headers: {"Authorization" : `Bearer ${token.token}`} } )
         .then((e) => {
             console.log(e);
             localStorage.setItem('token', JSON.stringify([]))

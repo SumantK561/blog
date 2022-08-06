@@ -19,7 +19,7 @@ class Commentcontroller extends Controller
            
      }
      else{
-        $data->img_text = $req->input('comment');
+        $data->img_text = $req->input('img_text');
         
      }
      $data->user_id = $req->input('user');
@@ -40,7 +40,7 @@ class Commentcontroller extends Controller
     {
         $data = Comment::find($id);
     
-    $data->img_text = $req->input('comment');
+    $data->img_text = $req->input('img_text');
     
         $data->update();
         return "Updated Comment Successfully ...";
