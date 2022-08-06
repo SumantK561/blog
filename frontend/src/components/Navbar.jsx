@@ -11,7 +11,7 @@ export default function Navbar({ fixed }) {
 
   const token = JSON.parse(localStorage.getItem("token"));
 
-  const check = () => {
+ /*  const check = () => {
     if (token.length === 0 || token === undefined) {
       console.log("if check");
       setStatus(false);
@@ -19,7 +19,7 @@ export default function Navbar({ fixed }) {
       console.log("else  check");
       setStatus(true);
     }
-  };
+  }; */
   const logout = async (e) => {
     axios
       .get(`http://127.0.0.1:8000/api/logoutUser`, {
@@ -27,7 +27,7 @@ export default function Navbar({ fixed }) {
       })
       .then((e) => {
         console.log(e);
-        localStorage.setItem("token", JSON.stringify([]));
+        localStorage.removeItem("token");
         setStatus(false);
         navigate("/login");
       })
@@ -36,9 +36,9 @@ export default function Navbar({ fixed }) {
         
       });
   };
-  useEffect(() => {
+ /*  useEffect(() => {
     check();
-  }, [status]);
+  }, [status]); */
   return (
     <>
       <nav
@@ -88,7 +88,7 @@ export default function Navbar({ fixed }) {
                 </NavLink>
               </li>
               <div className="nav-item">
-                {status ? (
+                {token ? (
                   <button
                     onClick={logout}
                     className="text-sm font-bold leading-relaxed inline-block  py-2 whitespace-nowrap uppercase text-white"

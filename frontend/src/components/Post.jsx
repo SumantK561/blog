@@ -15,7 +15,7 @@ const Post = () => {
   const { id } = useParams();
   const showPost = (e) => {
     axios
-      .get(`http://127.0.0.1:8000/api/postDetail/${id}`,   { headers: {"Authorization" : `Bearer ${user.token}`}} )
+      .get(`http://127.0.0.1:8000/api/postDetail/${id}`,   /* { headers: {"Authorization" : `Bearer ${user.token}`}}  */)
       .then((e) => {
         console.log(e.data);
         setItem(e.data);
