@@ -27,7 +27,7 @@ const Category = () => {
 
             })
             .catch(() => {
-                alert("Internal Error ... Please Check Category ...", e);
+                alert("Internal Error ... Please Check Category - submitUpdateForm...", e);
                
             });
         setTitle("");
@@ -46,7 +46,7 @@ const Category = () => {
 
             })
             .catch(() => {
-                alert("Internal Error ... Please Check Category ...", e);
+                alert("Internal Error ... Please Check Category - getData...", e);
                 
             });
     }
@@ -67,7 +67,7 @@ const Category = () => {
                     setState("deleted");
                 })
                 .catch((e) => {
-                    alert("Internal Error ... Please Check Category ...", e);
+                    alert("Internal Error ... Please Check Category - deleteCategory...", e);
                     
                 });
         }

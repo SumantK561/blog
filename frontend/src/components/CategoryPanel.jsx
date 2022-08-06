@@ -38,7 +38,7 @@ const CategoryPanel = () => {
         setItem(e.data);
       })
       .catch(() => {
-        alert("Internal Error... Please Check Cat Panel", e);
+        alert("Internal Error... Please Check Category Panel", e);
         
       });
   };
@@ -50,13 +50,14 @@ const CategoryPanel = () => {
         .then((e) => {
           setUpdate(true);
           console.log(e.data);
+          alert("Category Deleted Successfully ...");
         })
         .catch((e) => {
-          alert("Error in the code", e);
+          alert("Posts Available Under This Category...");
           
         });
     } else {
-      alert("only the Owner can delete the Category");
+      alert("Sorry ... Category Owner has the Access...");
     }
   };
   useEffect(() => {

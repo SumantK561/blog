@@ -25,9 +25,9 @@ function App() {
       <Route path="/Login" element={<Login/>} />
       <Route path="/Register" element={<Register/>} />
       <Route path="/Allposts" element={<Allposts/>}/>
-      <Route element={<Protected />}>
+      {/* <Route element={<Protected />}> */}
       <Route path="/post/:id" element={<Post />} />
-            
+      <Route element={<Protected />}>
             <Route path="/Dashboard/:id" element={<Dashboard/>} />
             <Route path="/Dashboard" element={<Protected prop={"dashboard"} />} />
             <Route path="/category/:id" element={<Category />} />

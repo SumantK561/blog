@@ -15,7 +15,7 @@ const Post = () => {
   const { id } = useParams();
   const showPost = (e) => {
     axios
-      .get(`http://127.0.0.1:8000/api/postDetail/${id}`,  { headers: {"Authorization" : `Bearer ${user.token}`}})
+      .get(`http://127.0.0.1:8000/api/postDetail/${id}`,   { headers: {"Authorization" : `Bearer ${user.token}`}} )
       .then((e) => {
         console.log(e.data);
         setItem(e.data);
@@ -89,7 +89,7 @@ const Post = () => {
         alert(e.data);
       })
       .catch(() => {
-        alert("Internal Error ... Please Check Post - submitForm", e);
+        alert("Login To Comment...", e);
         
       });
 
@@ -136,7 +136,7 @@ const Post = () => {
               </form>
             </div>
           </div>
-          <div className=" h-screen flex justify-center items-center">
+          <div className=" w-screen bg-slate-100 flex">
             <div className="inner  bg-slate-100 p-3">
               <div className="my-5">
                 <label className="text-2xl"> Title :</label>
@@ -155,8 +155,9 @@ const Post = () => {
                 </label>
               </div>
               <div>
+
                 <label className="text-2xl"> Description :</label>
-                <p>{item.post.desc}</p>
+               <p>{item.post.desc}</p>
               </div>
               <div>
                 <label className="text-2xl"> Comments :</label>
